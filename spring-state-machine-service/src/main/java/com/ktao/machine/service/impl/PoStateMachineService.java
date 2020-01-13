@@ -54,7 +54,7 @@ public class PoStateMachineService {
                     .withPayload(event)
                     .setHeader(PO_STATE_MACHINE_KEY, order)
                     .build();
-            // 状态机事件相映
+            // 状态机事件响应
             stateMachine.sendEvent(message);
         } catch (Exception e){
             log.error("采购单状态机流转异常, 参数: {}", order, e);
