@@ -27,6 +27,10 @@ public class PoStateMachineFactory {
     @Resource
     private PoStateMachineBuilder stateMachineBuilder;
 
+    /**
+     * 创建状态机实例
+     * @return
+     */
     public StateMachine<PurchaseOrderState, PurchaseOrderEvent> createStateMachine(){
         StateMachine<PurchaseOrderState, PurchaseOrderEvent> stateMachine;
         try {
