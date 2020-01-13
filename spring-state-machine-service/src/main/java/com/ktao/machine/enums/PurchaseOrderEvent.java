@@ -1,6 +1,7 @@
 package com.ktao.machine.enums;
 
 /**
+ * 采购单动作
  * @version 1.0
  * @author: kongtao
  * @description:

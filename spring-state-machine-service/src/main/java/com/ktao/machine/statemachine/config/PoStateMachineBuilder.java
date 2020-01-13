@@ -24,13 +24,13 @@ import java.util.EnumSet;
 public class PoStateMachineBuilder {
 
     @Resource
-    private PoApproveAction PoApproveAction;
+    private PoApproveAction poApproveAction;
 
     @Resource
-    private PoRejectAction PoRejectAction;
+    private PoRejectAction poRejectAction;
 
     @Resource
-    private PoCloseAction PoCloseAction;
+    private PoCloseAction poCloseAction;
 
     /**
      * 构建状态机
@@ -58,21 +58,21 @@ public class PoStateMachineBuilder {
                 .source(PurchaseOrderState.INIT)
                 .target(PurchaseOrderState.APPROVED)
                 .event(PurchaseOrderEvent.APPROVE)
-                .action(PoApproveAction)
+                .action(poApproveAction)
                 .and()
                 // 采购单驳回
                 .withExternal()
                 .source(PurchaseOrderState.INIT)
                 .target(PurchaseOrderState.REJECT)
                 .event(PurchaseOrderEvent.REJECT)
-                .action(PoRejectAction)
+                .action(poRejectAction)
                 .and()
-                // 采购单创建
+                // 采购单关闭
                 .withExternal()
                 .source(PurchaseOrderState.INIT)
                 .target(PurchaseOrderState.CLOSED)
                 .event(PurchaseOrderEvent.CLOSE)
-                .action(PoCloseAction)
+                .action(poCloseAction)
                 .and();
         return builder.build();
     }

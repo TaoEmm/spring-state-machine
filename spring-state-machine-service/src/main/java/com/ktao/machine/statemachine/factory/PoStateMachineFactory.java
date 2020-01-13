@@ -12,6 +12,7 @@ import javax.annotation.Resource;
 import java.util.UUID;
 
 /**
+ * 采购单状态机工厂类
  * @version 1.0
  * @author: kongtao
  * @description:
